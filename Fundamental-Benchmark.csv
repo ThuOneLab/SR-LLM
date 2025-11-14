@@ -1,0 +1,101 @@
+name,variables,expression,distribution,lb,ub,sample_num
+Nguyen-1,1,"pow(x1,3)+pow(x1,2)+x1",U,-1,1,20
+Nguyen-2,1,"pow(x1,4)+pow(x1,3)+pow(x1,2)+x1",U,-1,1,20
+Nguyen-3,1,"pow(x1,5)+pow(x1,4)+pow(x1,3)+pow(x1,2)+x1",U,-1,1,20
+Nguyen-4,1,"pow(x1,6)+pow(x1,5)+pow(x1,4)+pow(x1,3)+pow(x1,2)+x1",U,-1,1,20
+Nguyen-5,1,"sin(pow(x1,2))*cos(x1)-1",U,-1,1,20
+Nguyen-6,1,"sin(x1)+sin(x1+pow(x1,2))",U,-1,1,20
+Nguyen-7,1,"log(x1+1)+log(pow(x1,2)+1)",U,0,2,20
+Nguyen-8,1,"sqrt(x1)",U,0,4,20
+Nguyen-9,2,"sin(x1)+sin(pow(x2,2))",U,0,1,20
+Nguyen-10,2,2*sin(x1)*cos(x2),U,0,1,20
+Nguyen-11,2,"pow(x1,x2)",U,0,1,20
+Nguyen-12,2,"pow(x1,4)-pow(x1,3)+div(pow(x2,2),2)-x2",U,0,1,20
+Nguyen-2',1,"4*pow(x1,4)+3*pow(x1,3)+2*pow(x1,2)+x1",U,-1,1,20
+Nguyen-5',1,"sin(pow(x1,2))*cos(x1)-2",U,-1,1,20
+Nguyen-8',1,"pow(x1,1/3)",U,0,4,20
+Nguyen-8'',1,"pow(x1,2/3)",U,0,4,20
+Nguyen-1c,1,"3.39*pow(x1,3)+2.12*pow(x1,2)+x1",U,-1,1,20
+Nguyen-5c,1,"sin(pow(x1,2))*cos(x1)-0.75",U,-1,1,20
+Nguyen-7c,1,"log(x1+1.4)+log(pow(x1,2)+1.3)",U,0,2,20
+Nguyen-8c,1,"sqrt(1.23*x1)",U,0,4,20
+Nguyen-10c,2,"sin(1.5*x1)*cos(0.5*x2)",U,0,1,20
+Constant-1,1,"3.39*pow(x1,3)+2.12*pow(x1,2)+1.78*x1",U,-4,4,100
+Constant-2,1,"sin(pow(x1,2))*cos(x1)-0.75",U,-4,4,100
+Constant-3,2,sin(1.5*x1)*cos(0.5*x2),U,0.1,4,100
+Constant-4,2,"2.7*pow(x1,x2)",U,0.3,4,100
+Constant-5,1,sqrt(1.23*x1),U,0.1,4,100
+Constant-6,1,"pow(x1,0.426)",U,0,4,100
+Constant-7,2,2*sin(1.3*x1)*cos(x2),U,-4,4,100
+Constant-8,1,"log(x1+1.4)+log(pow(x1,2)+1.3)",U,0,4,100
+Livermore-1,1,"1./3+x1+sin(pow(x1,2))",U,-3,3,100
+Livermore-2,1,"sin(pow(x1,2))*cos(x1)-2",U,-3,3,100
+Livermore-3,1,"sin(pow(x1,3))*cos(pow(x1,2))-1",U,-3,3,100
+Livermore-4,1,"log(x1+1)+log(pow(x1,2)+1)+log(x1)",U,0,3,100
+Livermore-5,2,"pow(x1,4)-pow(x1,3)+pow(x2,2)-x2",U,-3,3,100
+Livermore-6,1,"4*pow(x1,4)+3*pow(x1,3)+2*pow(x1,2)+x1",U,-3,3,100
+Livermore-7,1,"div(exp(x1)-exp(-1*x1),2)",U,-1,1,100
+Livermore-8,1,"div(exp(x1)+exp(-1*x1),2)",U,-3,3,100
+Livermore-9,1,"pow(x1,9)+pow(x1,8)+pow(x1,7)+pow(x1,6)+pow(x1,5)+pow(x1,4)+pow(x1,3)+pow(x1,2)+x1",U,-1,1,100
+Livermore-10,2,6*sin(x1)*cos(x2),U,-3,3,100
+Livermore-11,2,"div(pow(x1,2)*pow(x2,2),(x1+x2))",U,-3,3,100
+Livermore-12,2,"div(pow(x1,5),pow(x2,3))",U,-3,3,100
+Livermore-13,1,"pow(x1,1/3)",U,-3,3,100
+Livermore-14,2,"pow(x1,3)+pow(x1,2)+x1+sin(x1)+sin(pow(x2,2))",U,-1,1,100
+Livermore-15,1,"pow(x1,1/5)",U,0,3,100
+Livermore-16,1,"pow(x1,2/3)",U,0,3,100
+Livermore-17,2,4*sin(x1)*cos(x2),U,-3,3,100
+Livermore-18,1,"sin(pow(x1,2))*cos(x1)-5",U,-3,3,100
+Livermore-19,1,"pow(x1,5)+pow(x1,4)+pow(x1,2)+x1",U,-3,3,100
+Livermore-20,1,"exp(-1*pow(x1,2))",U,-3,3,100
+Livermore-21,1,"pow(x1,8)+pow(x1,7)+pow(x1,6)+pow(x1,5)+pow(x1,4)+pow(x1,3)+pow(x1,2)+x1",U,-1,1,100
+Livermore-22,1,"exp(-0.5*pow(x1,2))",U,-3,3,100
+R1,1,"div(pow(x1+1,3),pow(x1,2)-x1+1)",U,-5,5,100
+R2,1,"div((pow(x1,5)-3*pow(x1,3)+1),(pow(x1,2)+1))",U,-4,4,100
+R3,1,"div((pow(x1,6)+pow(x1,5)),(pow(x1,4)+pow(x1,3)+pow(x1,2)+x1+1))",U,-4,4,100
+Vladislavleva-1,2,"(exp(-(x1 - 1)**2)) / (1.2 + (x2 - 2.5)**2)",U,-1,1,20
+Vladislavleva-2,1,"exp(-x1) * x1**3 * cos(x1) * sin(x1) * ((cos(x1) * sin(x1))**2 - 1)",U,-1,1,20
+Vladislavleva-3,2,"exp(-x1) * x1**3 * cos(x1) * sin(x1) * ((cos(x1) * sin(x1))**2 - 1) * (x2 - 5)",U,-1,1,20
+Vladislavleva-4,5,"10 / (5 + (x1 - 3)**2 + (x2 - 3)**2 + (x3 - 3)**2 + (x4 - 3)**2 + (x5 - 3)**2)",U,0,2,20
+Vladislavleva-5,3,"30 * (x1 - 1) * ((x3 - 1) / (x1 - 10)) * x2**2",U,-1,1,100
+Vladislavleva-6,2,"6 * sin(x1) * cos(x2)",E,1,50,50
+Vladislavleva-7,2,"2 - 2.1 * cos(9.8 * x1) * sin(1.3 * x2)",E,-50,50,100
+Vladislavleva-8,2,"(exp(-(x1 - 1)**2)) / (1.2 + (x2 - 2.5)**2)",U,0.4,4,100
+Neat-1,1,"x1**4 + x1**3 + x1**2 + x1",U,-1,1,20
+Neat-2,1,"x1**5 + x1**4 + x1**3 + x1**2 + x1",U,-1,1,20
+Neat-3,1,"sin(x1**2) * cos(x1 - 1)",U,-1,1,20
+Neat-4,1,"log(x1 + 1) + log(x1**2 + 1)",U,0,2,20
+Neat-5,2,"2 * sin(x1) * cos(x2)",U,-1,1,100
+Neat-7,2,"2 - 2.1 * cos(9.8 * x1) * sin(1.3 * x2)",E,-50,50,100
+Neat-8,2,"exp(-(x1 - 1)**2) / (1.2 + (x2 - 2.5)**2)",U,0.3,4,100
+Neat-9,2,"1 / (1 + x1**(-4)) + 1 / (1 + x2**(-4))",E,-5,5,21
+Keijzer-1,1,"0.3 * x1 * sin(2 * pi * x1)",U,-1,1,20
+Keijzer-2,1,"2.0 * x1 * sin(0.5 * pi * x1)",U,-1,1,20
+Keijzer-3,1,"0.92 * x1 * sin(2.41 * pi * x1)",U,-1,1,20
+Keijzer-4,1,"x1**3 * exp(-x1) * cos(x1) * sin(x1) * sin(x1)**2 * cos(x1) - 1",U,-1,1,20
+Keijzer-5,1,"3 + 2.13 * log(Abs(x1))",U,-1,1,20
+Keijzer-6,1,"x1 * (x1 + 1)",U,-1,1,20
+Keijzer-7,1,"log(x1**2)",U,0,1,20
+Keijzer-8,1,"sqrt(x1)",U,0,1,20
+Keijzer-9,1,"log(x1 + sqrt(x1**2 + 1))",U,-1,1,20
+Keijzer-10,2,"x1**12 / x2",U,-1,1,20
+Keijzer-11,2,"x1 * x2 + sin((x1 - 1) * (x2 - 1))",U,-1,1,20
+Keijzer-12,2,"x1**4 - x1**3 + x2**2 / 2 - x2",U,-1,1,20
+Keijzer-13,2,"6 * sin(x1) * cos(x2)",U,-1,1,20
+Keijzer-14,2,"8 / (2 + x1**2 + x2**2)",U,-1,1,20
+Keijzer-15,2,"x1**3 / 5 + x2**2 / 2 - x2 - x1",U,-1,1,20
+Korns-1,1,"1.57 + 24.3 * x1**4",U,-1,1,20
+Korns-2,4,"0.23 + 14.2 * ((x4 + x1) / (3 * x2))**(x2 - x1 + x1 / x3)",U,0.1,1,20
+Korns-3,3,"4.9 * ((x2 - x1 + x1 / x3) / (3 * x3)) - 5.41",U,-1,1,20
+Korns-4,1,"0.13 * sin(x1) - 2.3",U,-1,1,20
+Korns-5,1,"3 + 2.13 * log(Abs(x1))",U,-1,1,20
+Korns-6,1,"1.3 + 0.13 * sqrt(Abs(x1))",U,-1,1,20
+Korns-7,1,"2.1 * (1 - exp(-0.55 * x1))",U,-1,1,20
+Korns-8,3,"6.87 + 11 * sqrt(7.23 * x1 * x2 * x3)",U,0.1,1,20
+Korns-9,2,"12 * sqrt(4.2 * x1 * x2 * x2)",U,0.1,1,20
+Jin-1,2,"2.5 * x1**4 - 1.3 * x1**3 + 0.5 * x2**2 - 1.7 * x2",U,-3,3,100
+Jin-2,2,"8.0 * x1**2 + 8.0 * x2**3 - 15.0",U,-3,3,100
+Jin-3,2,"0.2 * x1**3 + 0.5 * x2**2 - 1.2 * x2 - 0.5 * x1",U,-3,3,100
+Jin-4,2,"1.5 * exp(x1) + 5.0 * cos(x2)",U,-3,3,100
+Jin-5,2,"6.0 * sin(x1) * cos(x2)",U,-3,3,100
+Jin-6,2,"1.35 * x1 * x2 + 5.5 * sin((x1 - 1.0) * (x2 - 1.0))",U,-3,3,100
