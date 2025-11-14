@@ -1,20 +1,15 @@
 # SR-LLM: An Incremental Symbolic Regression Framework Driven by LLM-based Retrieval-Augmented Generation
 
 ## 📢 News
-
-### 2025.9.28
-- ✅ **2025-09-28**: Released pre-review version with support for testing SR-LLM in discovering new car-following models.
-- ✅ **2025-10-09**: Released result files of SR-LLM on different benchmarks.
+- ✅ **2025-11-14**: Released result files of SR-LLM on different benchmarks, and support for testing SR-LLM in discovering new car-following models.
 - 🚀 Code for benchmark evaluations is currently being organized.
 
 More code is coming soon!
 
 ## Overview
 
-This repository hosts the **official pre-review release** of the implementation code for the paper:  
+This repository hosts the **official release** of the implementation code for the paper:  
 **SR-LLM: An Incremental Symbolic Regression Framework Driven by LLM-based Retrieval-Augmented Generation**.
-
-The full, cleaned implementation will be publicly released soon after the review process.
 
 ## Installation
 
