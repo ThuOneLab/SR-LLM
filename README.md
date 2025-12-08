@@ -1,4 +1,4 @@
-# SR-LLM: An Incremental Symbolic Regression Framework Driven by LLM-based Retrieval-Augmented Generation
+# Official implementation of SR-LLM: An Incremental Symbolic Regression Framework Driven by LLM-based Retrieval-Augmented Generation
 
 ## 📢 News
 - ✅ **2025-11-14**: Released result files of SR-LLM on different benchmarks, and support for testing SR-LLM in discovering new car-following models.
