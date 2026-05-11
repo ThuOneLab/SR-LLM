@@ -100,6 +100,85 @@ To run the experiment for discovering new models on NGSIM:
 python codes/applications/SRRAG_multiprocess_new_formula.py
 ```
 
+### General Symbolic Regression (New in v1.1)
+
+Starting from **v1.1**, SR-LLM supports **general-purpose symbolic regression** on arbitrary datasets with **physical unit constraints** and **RAG-enhanced LLM assistance**.
+
+You only need to provide:
+- Input data `X` and target `y`
+- Variable names, physical units, and semantic descriptions
+- (Optional) Target variable name, unit, and description
+- (Optional) A pre-built RAG library for your domain
+
+#### Quick Start
+
+```python
+import numpy as np
+from codes.applications.general_symbolic_regression import general_symbolic_regression
+
+# Example: discover y = x1^2 + 2*x2 + 1
+np.random.seed(42)
+X = np.random.rand(1000, 2) * 10
+y = X[:, 0]**2 + 2*X[:, 1] + 1
+
+best_expr, best_func = general_symbolic_regression(
+    X, y,
+    variable_names=["x1", "x2"],
+    variable_units=[[0, 0], [0, 0]],  # dimensionless
+    variable_descriptions=["first input variable", "second input variable"],
+    target_name="y",
+    target_unit=[0, 0],
+    target_description="output variable",
+    seed=100,
+    n_epochs=30,
+    n_evolutions=8,
+)
+print("Discovered expression:", best_expr)
+```
+
+#### With Physical Unit Constraints
+
+If your problem has physical meaning, provide SI unit vectors (`[m, s, kg, K, A, cd, mol]`). The framework will automatically enforce dimensional consistency during search:
+
+```python
+best_expr, best_func = general_symbolic_regression(
+    X, y,
+    variable_names=["s", "v", "delta_v"],
+    variable_units=[[1, 0], [1, -1], [1, -1]],  # distance, speed, speed
+    variable_descriptions=[
+        "spacing between vehicles",
+        "ego vehicle speed",
+        "relative speed to leading vehicle",
+    ],
+    target_name="a",
+    target_unit=[1, -2],  # acceleration
+    target_description="ego vehicle acceleration",
+    use_rag=True,
+    memory_path="codes/ragLibrary/memory_car_following",
+)
+```
+
+#### Building a RAG Library
+
+To leverage domain knowledge, build a RAG library before running regression. See the detailed guide:
+
+👉 **[RAG Library Construction Guide](codes/applications/README_RAG.md)**
+
+Key steps:
+1. Initialize a `RAG_AGENT` with a `memory_path`
+2. Add `Knowledge` objects describing how symbols combine in your domain
+3. Save target names and pass the `memory_path` to `general_symbolic_regression`
+
+#### Command-Line Demo
+
+```bash
+python codes/applications/general_symbolic_regression.py
+```
+
+> **Note**: The demo uses `use_rag=False` and small `n_epochs/n_evolutions` so it can run without an LLM API key. For production use, set `use_rag=True` and configure your `OPENAI_API_KEY`.
+
+---
+
 ## Datasets Used in SR-LLM
 
 This repository includes all formulas used in SR-LLM, including `Fundamental-Benchmark.csv` , `Feynman-Benchmark.csv` and `Random-Benchmark.csv`.
