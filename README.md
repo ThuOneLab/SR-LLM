@@ -149,8 +149,12 @@ python codes/applications/general_symbolic_regression.py
 
 ## Datasets Used in SR-LLM
 
-This repository includes all formulas used in SR-LLM, including `Fundamental-Benchmark.csv` , `Feynman-Benchmark.csv` and `Random-Benchmark.csv`.
-⚠️ **Note**: Some entries in `Feynman-Benchmark.csv` list an incorrect number of variables. The following equations require manual correction in the "# variables" column:
+This repository includes all formulas used in SR-LLM, located under the `benchmarks/` folder:
+- [`benchmarks/Fundamental-Benchmark.csv`](benchmarks/Fundamental-Benchmark.csv)
+- [`benchmarks/Feynman-Benchmark.csv`](benchmarks/Feynman-Benchmark.csv)
+- [`benchmarks/Random-Benchmark.csv`](benchmarks/Random-Benchmark.csv)
+
+⚠️ **Note**: Some entries in `benchmarks/Feynman-Benchmark.csv` list an incorrect number of variables. The following equations require manual correction in the "# variables" column:
 - I.18.12
 - I.18.14
 - III.10.19
