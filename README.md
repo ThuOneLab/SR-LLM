@@ -162,7 +162,7 @@ best_expr, best_func = general_symbolic_regression(
 
 To leverage domain knowledge, build a RAG library before running regression. See the detailed guide:
 
-👉 **[RAG Library Construction Guide](codes/applications/README_RAG.md)**
+👉 **[RAG Library Construction Guide](docs/README_RAG.md)**
 
 Key steps:
 1. Initialize a `RAG_AGENT` with a `memory_path`

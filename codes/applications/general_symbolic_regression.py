@@ -438,7 +438,7 @@ def general_symbolic_regression(
         Number of LLM-driven evolutions (set to 1 to disable LLM expansion). Default is 10.
     use_rag : bool, optional
         Whether to enable RAG (Retrieval-Augmented Generation) for LLM symbol expansion.
-        If True, a `memory_path` must point to a valid RAG library (see README_RAG.md).
+        If True, a `memory_path` must point to a valid RAG library (see docs/README_RAG.md).
     memory_path : str, optional
         Path to the Chroma-based RAG knowledge pool. Default is "codes/ragLibrary/memory_general".
     device : str, optional
