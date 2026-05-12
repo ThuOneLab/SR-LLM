@@ -1,7 +1,7 @@
 # Official implementation of SR-LLM: An Incremental Symbolic Regression Framework Driven by LLM-based Retrieval-Augmented Generation
 
 ## 📢 News
-- ✅ **2026-05-12**: Added **General Symbolic Regression** functionality — now supports arbitrary formulas with physical unit constraints and RAG-enhanced LLM assistance.
+- ✅ **2026-05-12**: Added **General Symbolic Regression** functionality.
 - ✅ **2025-11-14**: Released result files of SR-LLM on different benchmarks, and support for testing SR-LLM in discovering new car-following models.
 - 🚀 Code for benchmark evaluations is currently being organized.
 
@@ -17,7 +17,7 @@ This repository hosts the **official release** of the implementation code for th
 First, clone the repository:
 
 ```bash
-git clone https://github.com/your-org/SR-LLM.git
+git clone https://github.com/ThuOneLab/SR-LLM.git
 cd SR-LLM
 ```
 
@@ -111,51 +111,20 @@ You only need to provide:
 
 #### Quick Start
 
-```python
-import numpy as np
-from codes.applications.general_symbolic_regression import general_symbolic_regression
+We provide two ready-to-run examples under `codes/applications/examples/`:
 
-# Example: discover y = x1^2 + 2*x2 + 1
-np.random.seed(42)
-X = np.random.rand(1000, 2) * 10
-y = X[:, 0]**2 + 2*X[:, 1] + 1
+- **[example_polynomial.py](codes/applications/examples/example_polynomial.py)** — Dimensionless polynomial discovery (`y = x₁² + 2·x₂ + 1`).
+- **[example_gravity.py](codes/applications/examples/example_gravity.py)** — Newton's law of universal gravitation with physical units, free constants, and fixed constants.
 
-best_expr, best_func = general_symbolic_regression(
-    X, y,
-    variable_names=["x1", "x2"],
-    variable_units=[[0, 0], [0, 0]],  # dimensionless
-    variable_descriptions=["first input variable", "second input variable"],
-    target_name="y",
-    target_unit=[0, 0],
-    target_description="output variable",
-    seed=100,
-    n_epochs=30,
-    n_evolutions=8,
-)
-print("Discovered expression:", best_expr)
+Run any example directly:
+
+```bash
+python codes/applications/examples/example_polynomial.py
 ```
 
 #### With Physical Unit Constraints
 
-If your problem has physical meaning, provide SI unit vectors (`[m, s, kg, K, A, cd, mol]`). The framework will automatically enforce dimensional consistency during search:
-
-```python
-best_expr, best_func = general_symbolic_regression(
-    X, y,
-    variable_names=["s", "v", "delta_v"],
-    variable_units=[[1, 0], [1, -1], [1, -1]],  # distance, speed, speed
-    variable_descriptions=[
-        "spacing between vehicles",
-        "ego vehicle speed",
-        "relative speed to leading vehicle",
-    ],
-    target_name="a",
-    target_unit=[1, -2],  # acceleration
-    target_description="ego vehicle acceleration",
-    use_rag=True,
-    memory_path="codes/ragLibrary/memory_car_following",
-)
-```
+If your problem has physical meaning, provide SI unit vectors (`[m, s, kg, K, A, cd, mol]`). The framework will automatically enforce dimensional consistency during search. See `example_gravity.py` for a complete demonstration including free constants (e.g., gravitational constant `G`) and fixed constants (e.g., `1`).
 
 #### Building a RAG Library
 
