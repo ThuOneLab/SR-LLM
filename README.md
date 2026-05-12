@@ -17,9 +17,7 @@ This repository hosts the **official release** of the implementation code for th
 First, clone the repository:
 
 ```bash
-wget https://anonymous.4open.science/api/repo/SR-LLM-PNAS/zip
-mv zip SR-LLM.zip
-unzip SR-LLM.zip -d SR-LLM
+git clone https://github.com/your-org/SR-LLM.git
 cd SR-LLM
 ```
 
