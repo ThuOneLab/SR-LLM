@@ -1,6 +1,7 @@
 # Official implementation of SR-LLM: An Incremental Symbolic Regression Framework Driven by LLM-based Retrieval-Augmented Generation
 
 ## 📢 News
+- ✅ **2026-05-12**: Added **General Symbolic Regression** functionality — now supports arbitrary formulas with physical unit constraints and RAG-enhanced LLM assistance.
 - ✅ **2025-11-14**: Released result files of SR-LLM on different benchmarks, and support for testing SR-LLM in discovering new car-following models.
 - 🚀 Code for benchmark evaluations is currently being organized.
 
@@ -100,7 +101,7 @@ To run the experiment for discovering new models on NGSIM:
 python codes/applications/SRRAG_multiprocess_new_formula.py
 ```
 
-### General Symbolic Regression (New in v1.1)
+### General Symbolic Regression
 
 Starting from **v1.1**, SR-LLM supports **general-purpose symbolic regression** on arbitrary datasets with **physical unit constraints** and **RAG-enhanced LLM assistance**.
 
